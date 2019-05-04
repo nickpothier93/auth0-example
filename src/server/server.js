@@ -8,9 +8,9 @@ let app = express();
 
 app.listen(port, console.log("Server listening on port", port));
 
-// app.get("/", (req, res) => {
-//   res.send(" Hello world!!!!");
-// });
+app.get("/", (req, res) => {
+  res.send(" Hello world!!!!");
+});
 
 app.use(cors(), bodyParser.urlencoded({ extended: true }), bodyParser.json());
 
