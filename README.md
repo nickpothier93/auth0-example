@@ -2,6 +2,7 @@
 A sample full stack task management web application using the following technology:
 - React.JS
 - Redux
+- Axios
 - Node.JS
 - Express
 - MongoDB
