@@ -21,7 +21,23 @@ export function* taskCreationSaga() {
         name: "New Task"
       }
     });
+  }
+}
 
-    console.info("Got response", res);
+export function* taskModificationSaga() {
+  while (true) {
+    const task = yield take([
+      mutations.SET_TASK_COMPLETE,
+      mutations.SET_TASK_NAME,
+      mutations.SET_TASK_GROUP
+    ]);
+    axios.post(url + `/task/update`, {
+      task: {
+        id: task.taskID,
+        group: task.groupID,
+        name: task.name,
+        isComplete: task.isComplete
+      }
+    });
   }
 }
